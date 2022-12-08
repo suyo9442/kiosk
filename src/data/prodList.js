@@ -1,0 +1,42 @@
+export const data = [
+  {
+    id: 0,
+    idx: 0,
+    text: "purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula",
+    name: "Hayes Mcintyre",
+    url: "https://via.placeholder.com/300/92c952",
+    currency: "$17.13",
+  },
+  {
+    id: 1,
+    idx: 1,
+    text: "interdum enim non nisi. Aenean eget metus. In nec orci.",
+    name: "Lacota Park",
+    url: "https://via.placeholder.com/300/771796",
+    currency: "$35.51",
+  },
+  {
+    id: 2,
+    idx: 2,
+    text: "fringilla ornare placerat, orci lacus vestibulum lorem, sit amet ultricies",
+    name: "Uma Olsen",
+    url: "https://via.placeholder.com/300/d32776",
+    currency: "$59.53",
+  },
+  {
+    id: 3,
+    idx: 3,
+    text: "lectus pede et risus. Quisque libero lacus, varius et, euismod",
+    name: "Bryar Jimenez",
+    url: "https://via.placeholder.com/300/f66b97",
+    currency: "$69.43",
+  },
+  {
+    id: 4,
+    idx: 4,
+    text: "orci luctus et ultrices posuere cubilia Curae Phasellus ornare. Fusce",
+    name: "Patience Chen",
+    url: "https://via.placeholder.com/300/b0f7cc",
+    currency: "$62.75",
+  },
+];

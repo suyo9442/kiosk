@@ -1,0 +1,21 @@
+.contianer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.MenuTempleteItem {
+  width: calc(50% - 20px);
+  margin: 10px;
+}
+.AddModal {
+  width: 100%;
+  height: 200px;
+  outline: 1px solid #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AddModal p {
+  margin-bottom: 10px;
+}
