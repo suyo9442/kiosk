@@ -8,19 +8,44 @@ export const MenuTemplete = ({
   deleteList,
   openModal,
   addModal,
+  addList,
+  updateModal,
+  updateList,
 }) => {
-  console.log("MenuTemplete 렌더링 !");
   const [nameValue, setNameValue] = useState("");
   const [textValue, setTextValue] = useState("");
   const [currValue, setCurrValue] = useState("");
 
   const onChange = (e) => {
-    console.log(e.target.name);
+    const name = e.target.name;
+
+    // 만약 이벤트가 일어난 타겟의 이름이 ~면 해당 state를 변경해줌
+    if (name === "name") {
+      setNameValue((prev) => e.target.value);
+    } else if (name === "text") {
+      setTextValue((prev) => e.target.value);
+    } else if (name === "currency") {
+      setCurrValue((prev) => e.target.value);
+    }
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    addList(nameValue, textValue, currValue);
   };
 
   return (
     <div className="MenuTemplete">
-      <button onClick={openModal}>➕</button>
+      {/* <input
+        type="button"
+        name="update"
+        value="✏️"
+        onClick={(e) => openModal(e.target.name)}
+      /> */}
+
+      <button name="add" onClick={(e) => openModal(e.target.name)}>
+        ➕
+      </button>
       {addModal ? (
         <div className="AddModal">
           <div className="container">
@@ -35,16 +60,27 @@ export const MenuTemplete = ({
             </p>
             <p>
               <em>설명 </em>
-              <input type="text" name="text" value={textValue} />
+              <input
+                type="text"
+                name="text"
+                value={textValue}
+                onChange={onChange}
+              />
             </p>
             <p>
               <em>가격 </em>
-              <input type="text" name="currency" value={currValue} />
+              <input
+                type="text"
+                name="currency"
+                value={currValue}
+                onChange={onChange}
+              />
             </p>
-            <input type="button" value="추가하기" />
+            <input type="button" value="추가하기" onClick={onSubmit} />
           </div>
         </div>
       ) : null}
+      {/* {updateModal ? <p>외않되?</p> : null} */}
       <h2>{tableNum}번 테이블입니다</h2>
       <div className="contianer">
         {prodList.map((data) => (
@@ -53,8 +89,12 @@ export const MenuTemplete = ({
             key={data.id}
             idx={data.idx}
             url={data.url}
+            text={data.text}
             price={data.currency}
             deleteList={deleteList}
+            openModal={openModal}
+            updateModal={updateModal}
+            updateList={updateList}
           />
         ))}
       </div>

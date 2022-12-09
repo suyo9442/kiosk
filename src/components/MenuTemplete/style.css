@@ -19,3 +19,7 @@
 .AddModal p {
   margin-bottom: 10px;
 }
+
+.updateModal {
+  background-color: red;
+}
